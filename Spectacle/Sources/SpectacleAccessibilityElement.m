@@ -26,6 +26,30 @@
   return frontmostApplicationElement;
 }
 
++ (NSMutableArray<SpectacleAccessibilityElement *> *)allApplicationWindowElements
+{
+    NSArray<NSRunningApplication *> *runningApplications = [NSWorkspace sharedWorkspace].runningApplications;
+    NSMutableArray<SpectacleAccessibilityElement *> *allApplicationElements = [NSMutableArray new];
+
+    for (NSRunningApplication *application in runningApplications) {
+      AXUIElementRef underlyingElement = AXUIElementCreateApplication(application.processIdentifier);
+      CFArrayRef windows;
+      AXError result = AXUIElementCopyAttributeValue(underlyingElement, kAXWindowsAttribute, (CFTypeRef*)&windows);
+      if (result == kAXErrorSuccess) {
+        CFIndex i, c = CFArrayGetCount(windows);
+        for (i = 0; i < c; i++) {
+          SpectacleAccessibilityElement *windowElement = [SpectacleAccessibilityElement new];
+          AXUIElementRef window = CFArrayGetValueAtIndex(windows, i);
+          windowElement.underlyingElement = window;
+          [allApplicationElements addObject:windowElement];
+        }
+      }
+      CFRelease(underlyingElement);
+    }
+
+    return allApplicationElements;
+}
+
 + (SpectacleAccessibilityElement *)frontmostWindowElement
 {
   SpectacleAccessibilityElement *frontmostApplicationElement = [SpectacleAccessibilityElement frontmostApplicationElement];

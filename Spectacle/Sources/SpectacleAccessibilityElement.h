@@ -4,6 +4,7 @@
 
 + (SpectacleAccessibilityElement *)frontmostApplicationElement;
 + (SpectacleAccessibilityElement *)frontmostWindowElement;
++ (NSMutableArray<SpectacleAccessibilityElement *> *)allApplicationWindowElements;
 
 - (SpectacleAccessibilityElement *)elementWithAttribute:(CFStringRef)attribute;
 
