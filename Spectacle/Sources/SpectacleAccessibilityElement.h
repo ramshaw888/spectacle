@@ -16,6 +16,8 @@
 - (CGRect)rectOfElement;
 - (void)setRectOfElement:(CGRect)rect;
 
+- (NSString *)windowTitle;
+
 + (CGRect)normalizeCoordinatesOfRect:(CGRect)rect frameOfScreen:(CGRect)frameOfScreen;
 
 - (BOOL)isSheet;

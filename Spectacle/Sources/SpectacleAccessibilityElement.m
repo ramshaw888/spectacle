@@ -50,6 +50,16 @@
     return allApplicationElements;
 }
 
+- (NSString *)windowTitle
+{
+  NSString *title = nil;
+  AXError result = AXUIElementCopyAttributeValue(_underlyingElement, kAXTitleAttribute, (void *) &title);
+  if (result == kAXErrorSuccess) {
+    return title;
+  }
+  return nil;
+}
+
 + (SpectacleAccessibilityElement *)frontmostWindowElement
 {
   SpectacleAccessibilityElement *frontmostApplicationElement = [SpectacleAccessibilityElement frontmostApplicationElement];
