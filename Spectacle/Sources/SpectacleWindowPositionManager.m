@@ -11,11 +11,13 @@
 #import "SpectacleStandardWindowMover.h"
 #import "SpectacleWindowPositionCalculationResult.h"
 #import "SpectacleWindowPositionCalculator.h"
+#import "SpectacleWindowTreeManager.h"
 
 @implementation SpectacleWindowPositionManager
 {
   NSMutableDictionary<NSString *, SpectacleHistory *> *_applicationHistories;
   SpectacleScreenDetector *_screenDetector;
+  SpectacleWindowTreeManager *_windowTreeManager;
   SpectacleWindowPositionCalculator *_windowPositionCalculator;
   NSWorkspace *_sharedWorkspace;
   SpectacleFailureFeedback _failureFeedback;
@@ -35,6 +37,7 @@
     _sharedWorkspace = sharedWorkspace;
     _failureFeedback = failureFeedback;
     _windowMover = windowMover;
+    _windowTreeManager = [[SpectacleWindowTreeManager alloc] init];
   }
   return self;
 }
@@ -120,6 +123,7 @@
 - (void)moveFrontmostWindowElement:(SpectacleAccessibilityElement *)frontmostWindowElement
                             action:(SpectacleWindowAction *)action
 {
+  [_windowTreeManager windowMoved];
   if (SpectacleIsUndoWindowAction(action)) {
     [self undoLastWindowAction];
   } else if (SpectacleIsRedoWindowAction(action)) {

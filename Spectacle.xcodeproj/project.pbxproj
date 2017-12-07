@@ -77,6 +77,7 @@
 		2DC8A0171B85097900ABEBD5 /* SpectacleLoginItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC8A0161B85097900ABEBD5 /* SpectacleLoginItemHelper.m */; };
 		2DE03E481D7B8F5A004E80D6 /* SpectacleShortcutKeyBindingsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE03E471D7B8F5A004E80D6 /* SpectacleShortcutKeyBindingsSpec.m */; };
 		2DE03E4B1D7B98D6004E80D6 /* SpectacleShortcutKeyBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE03E4A1D7B98D6004E80D6 /* SpectacleShortcutKeyBindings.m */; };
+		DA7F7B171FD90A7C00864916 /* SpectacleWindowTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7F7B161FD90A7C00864916 /* SpectacleWindowTreeManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,8 @@
 		574F6A1C1C57BE40001A5679 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = pt; path = Spectacle/Resources/Localizations/pt.lproj/Credits.rtf; sourceTree = "<group>"; };
 		574F6A1D1C57BE40001A5679 /* pt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = pt; path = Spectacle/Resources/Localizations/pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		574F6A1E1C57BE40001A5679 /* pt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = pt; path = Spectacle/Resources/Localizations/pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA7F7B151FD90A7B00864916 /* SpectacleWindowTreeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpectacleWindowTreeManager.h; path = Spectacle/Sources/SpectacleWindowTreeManager.h; sourceTree = "<group>"; };
+		DA7F7B161FD90A7C00864916 /* SpectacleWindowTreeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpectacleWindowTreeManager.m; path = Spectacle/Sources/SpectacleWindowTreeManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -544,6 +547,8 @@
 		2DC8A0141B84E24500ABEBD5 /* Window Management */ = {
 			isa = PBXGroup;
 			children = (
+				DA7F7B151FD90A7B00864916 /* SpectacleWindowTreeManager.h */,
+				DA7F7B161FD90A7C00864916 /* SpectacleWindowTreeManager.m */,
 				0747DAE91183AAC100F75DD2 /* Accessibility API */,
 				2DAC59EA1BB2364700C660ED /* Window Movement History */,
 				2DAC59F41BB23DAD00C660ED /* Window Movers */,
@@ -710,6 +715,7 @@
 				2DAC59F01BB238D900C660ED /* SpectacleQuantizedWindowMover.m in Sources */,
 				2D1AE52515D715F400EAC5BD /* SpectacleRegisteredShortcutValidator.m in Sources */,
 				2D2629461CCECB9E009D1ED0 /* SpectacleScreenDetectionResult.m in Sources */,
+				DA7F7B171FD90A7C00864916 /* SpectacleWindowTreeManager.m in Sources */,
 				2D4F3ED014A27B4500C29D11 /* SpectacleScreenDetector.m in Sources */,
 				2D3A050E194956E100CD96E7 /* SpectacleShortcut.m in Sources */,
 				2D24ACB71CC8728E00AB3984 /* SpectacleShortcutHolder.m in Sources */,
